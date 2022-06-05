@@ -1,0 +1,26 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+            <img [src]="city.NationFlag" alt="NationFlag">
+        </div>
+        <mat-card-title>{{ city.CityName }}</mat-card-title>
+        <mat-card-subtitle>{{ city.Nation }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="city.CityImage" alt="{{ city.CityName }}" style="height: 250px;">
+    <mat-card-content>
+        <p>
+            {{ city.Description }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="footer">
+            <div>
+                <button mat-button color="warn" (click)="incrementPopulation(city.CityName)" [disabled]="city.Population < 5000000">Nuke</button>
+                <button mat-button color="primary" (click)="decrementPopulation(city.CityName)">Grow</button>
+            </div>
+            <div>
+                Population: {{ city.Population }}
+            </div>
+        </div>
+    </mat-card-actions>
+</mat-card>
