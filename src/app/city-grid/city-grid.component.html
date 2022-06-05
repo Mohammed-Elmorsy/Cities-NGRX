@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngFor="let city of cities" class="column">
+    <div *ngFor="let city of cities$ | async" class="column">
         <app-city-card [city]="city"></app-city-card>
     </div>
 </div>

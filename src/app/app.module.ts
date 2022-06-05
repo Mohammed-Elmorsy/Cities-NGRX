@@ -11,6 +11,8 @@ import { CityCardComponent } from './city-grid/city-card/city-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { cityReducer } from './store/reducers/city.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 
@@ -23,11 +25,12 @@ import { cityReducer } from './store/reducers/city.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ cities: cityReducer }, {}),
+    StoreModule.forRoot({ cities: cityReducer }),
     BrowserAnimationsModule,
 
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

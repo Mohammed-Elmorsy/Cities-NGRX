@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { cities } from '../data/cities';
+import { AppState } from '../store/models/app-state.model';
 import { City } from '../store/models/city.model';
 
 @Component({
@@ -10,12 +11,12 @@ import { City } from '../store/models/city.model';
   styleUrls: ['./city-grid.component.css']
 })
 export class CityGridComponent implements OnInit {
-  cities: City[] = cities;
+  cities$!: Observable<City[]>;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.store.subscribe((data: any) => cities);
+    this.cities$ = this.store.select(store => store.cities);
   }
 
 }
