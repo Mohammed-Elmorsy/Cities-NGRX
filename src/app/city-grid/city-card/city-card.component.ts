@@ -22,7 +22,6 @@ export class CityCardComponent implements OnInit {
 
   decrementPopulation(cityName: string) {
     this.store.dispatch(new DecrementPopulationAction(cityName));
-
   }
 
 }
