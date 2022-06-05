@@ -1,13 +1,14 @@
 import { Action } from '@ngrx/store';
 
 export enum CityActions {
-  GET_CITIES = '[City] Get Cities',
   INCREMENT_POPULATION = '[City] Increment Population',
   DECREMENT_POPULATION = '[City] Decrement Population',
+  POPULATION_FILTER = '[City] Population Filter'
 }
 
-export class GetCitiesAction implements Action {
-  public readonly type = CityActions.GET_CITIES;
+export class PopulationFilterAction implements Action {
+  public readonly type = CityActions.POPULATION_FILTER;
+  constructor(public payload: number) {}
 }
 
 export class IncrementPopulationAction implements Action {

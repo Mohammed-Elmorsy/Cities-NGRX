@@ -10,6 +10,18 @@
     margin: 10px;
 }
 
+.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+mat-slider {
+    width: 300PX;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .column {

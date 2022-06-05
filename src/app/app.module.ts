@@ -10,9 +10,11 @@ import { CityCardComponent } from './city-grid/city-card/city-card.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
 import { cityReducer } from './store/reducers/city.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -27,9 +29,11 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     StoreModule.forRoot({ cities: cityReducer }),
     BrowserAnimationsModule,
+    FormsModule,
 
     MatCardModule,
     MatButtonModule,
+    MatSliderModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],

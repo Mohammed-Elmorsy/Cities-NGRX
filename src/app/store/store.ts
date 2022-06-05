@@ -7,6 +7,6 @@ export let initialState: City[] = [
 
 export interface CityAction {
     type: string;
-    payload?: string;
+    payload?: any;
 }
 
