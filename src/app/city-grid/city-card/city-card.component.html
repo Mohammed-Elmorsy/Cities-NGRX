@@ -15,8 +15,8 @@
     <mat-card-actions>
         <div class="footer">
             <div>
-                <button mat-button color="warn" (click)="decrementPopulation(city.CityName)" [disabled]="city.Population < 5000000">Nuke</button>
-                <button mat-button color="primary" (click)="incrementPopulation(city.CityName)">Grow</button>
+                <button mat-button color="warn" (click)="nuke$.next(city.CityName)" [disabled]="city.Population < 5000000">Nuke</button>
+                <button mat-button color="primary" (click)="grow$.next(city.CityName)">Grow</button>
             </div>
             <div>
                 Population: {{ city.Population }}
