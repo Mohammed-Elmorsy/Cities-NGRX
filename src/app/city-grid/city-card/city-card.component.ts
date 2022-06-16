@@ -1,10 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import {
-  DecrementPopulationAction,
-  IncrementPopulationAction,
-} from 'src/app/store/actions/city.action';
 import { City } from 'src/app/store/models/city.model';
+import { CitiesStore } from '../cities.store';
 
 @Component({
   selector: 'app-city-card',
@@ -13,16 +9,10 @@ import { City } from 'src/app/store/models/city.model';
 })
 export class CityCardComponent implements OnInit {
   @Input() city!: City;
+  grow$ = this.store.grow$;
+  nuke$ = this.store.nuke$;
 
-  constructor(private store: Store) {}
+  constructor(private store: CitiesStore) {}
 
   ngOnInit(): void {}
-
-  incrementPopulation(cityName: string) {
-    this.store.dispatch(new IncrementPopulationAction(cityName));
-  }
-
-  decrementPopulation(cityName: string) {
-    this.store.dispatch(new DecrementPopulationAction(cityName));
-  }
 }

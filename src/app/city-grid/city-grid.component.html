@@ -1,7 +1,7 @@
 <div class="slider">
     <h3>Select minimum population</h3>
     <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="0" max="50000000" step="1000000"
-        [(ngModel)]="population" (change)="filterCities()" aria-label="units"></mat-slider>
+        [(ngModel)]="population" (change)="populationFilterChange$.next(population)" aria-label="units"></mat-slider>
 </div>
 <div class="container">
     <div *ngFor="let city of cities$ | async" class="column">
